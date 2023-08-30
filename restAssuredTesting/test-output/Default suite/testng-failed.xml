@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.RestAssured.com_Site">
+      <class name="ApiTesting.site1">
         <methods>
-          <include name="GET_tc001"/>
-          <include name="setUp"/>
+          <include name="getBooking"/>
         </methods>
-      </class> <!-- com.RestAssured.com_Site -->
+      </class> <!-- ApiTesting.site1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

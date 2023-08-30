@@ -56,7 +56,7 @@ public class site1 {
 		data.put("username", "admin");
 		data.put("password", "password123");
 		
-		       ResponseOptions response= given()
+		       Response response= given()
 		    		   
 		             .contentType("application/json")
 		             .body(data)

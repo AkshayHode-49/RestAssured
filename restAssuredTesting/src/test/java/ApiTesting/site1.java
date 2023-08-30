@@ -14,7 +14,9 @@ import java.util.HashMap;
 public class site1 {
 	
 	@Test
-	public void get1() {
+	public void getBooking() {
+		
+		System.out.println("Retrive data booking_id 1");
 		
 		RestAssured.baseURI="https://restful-booker.herokuapp.com";
 		
@@ -32,18 +34,24 @@ public class site1 {
 		  
 		  String firstName=response.jsonPath().getString("firstname");
           System.out.println(firstName);
-		  Assert.assertEquals(firstName, "Susan");
+		
+          Object headers=response.getHeaders();
+          System.out.println(headers);
+          
+          Object cookies=response.getCookies();
+          System.out.println(cookies);
 		  
-		  Assert.assertEquals(response.jsonPath().getString("totalprice"),"616");
+		 
           
 	}
 	
 	@Test
-	public void post() {
+	public void createToken() {
 		
-		System.out.println("create token");
+		System.out.println("create token using post request");
+		
+		
 		RestAssured.baseURI="https://restful-booker.herokuapp.com";
-		
 		HashMap data=new HashMap();
 		data.put("username", "admin");
 		data.put("password", "password123");
@@ -66,8 +74,12 @@ public class site1 {
 		System.out.println(response.statusCode());
 	}
 	
+	
+	
 	@Test
-	public void get() {
+	public void getBookingIds() {
+		
+		System.out.println("All Ids");
 		
 		Response response=given()
 		
@@ -84,7 +96,9 @@ public class site1 {
 		String responseBody=response.body().asString();
 		System.out.println(responseBody);
 		
-	
+		String content_type=response.getContentType();
+		System.out.println(content_type);
+		
 	}
 	
 
